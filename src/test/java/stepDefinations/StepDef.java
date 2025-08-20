@@ -98,8 +98,8 @@ public class StepDef {
     }
 
     @Then("the ex_logout_url should be {string}")
-    public void theUrlShouldBe(String ex_logout_url) throws InterruptedException {
-        Thread.sleep(7000L);
+    public void theUrlShouldBe(String ex_logout_url)  {
+
         String ac_logout_url =  driver.getCurrentUrl();
 
 //        if (ex_logout_url.equals(ac_logout_url)) {

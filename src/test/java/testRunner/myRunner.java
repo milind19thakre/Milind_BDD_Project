@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
         }
 )
 
-public class MyRunner extends AbstractTestNGCucumberTests {
+public class myRunner extends AbstractTestNGCucumberTests {
 
 
 }
