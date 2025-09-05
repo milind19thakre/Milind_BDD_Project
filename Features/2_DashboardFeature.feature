@@ -1,15 +1,19 @@
+@Regression
 Feature: Dashboard Validation
 
   Background:
     Given user launch chrome browser
-    When user opens url "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-    And user enters userid as "Admin" and password as "admin123"
+#  When user opens url "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+    When user opens url
+#  And user enters userid as "Admin" and password as "admin123"
+    And user enters correct userid and password
     And click on login
     Then page title should be "OrangeHRM"
+#    And close browser
 
 
 
-  @Regression
+
   Scenario Outline: Validate the elements present on dashboard
     Then validate <elements> on dashboard
     Examples:
@@ -24,7 +28,7 @@ Feature: Dashboard Validation
 
 
     #Amministrazione
-  @Smoke
+  @Mvt
   Scenario Outline: Validate the elements present on left pane on dashboard
     Then validate <elements> left pane
     Examples:
@@ -42,7 +46,7 @@ Feature: Dashboard Validation
     |Claim|
     |Buzz|
 
-  @Mvt
+
   Scenario Outline: Validate the element page is loading
     Then click on <elements1> from left pane
     Then check <elements1> is present
@@ -59,4 +63,4 @@ Feature: Dashboard Validation
       |Claim|
       |Buzz|
 
-    Scenario:
+

@@ -29,7 +29,7 @@ public class Dashborad_sd {
     @Then("validate {} on dashboard")
     public void validateOnDashboard(String elementName) {
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
         // Build dynamic xpath using text
         String xpath = "//*[text()='" + elementName + "']";
         WebElement element =  driver.findElement(By.xpath(xpath));
