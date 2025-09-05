@@ -22,6 +22,6 @@ import org.junit.runner.RunWith;
 
 public class myRunner extends AbstractTestNGCucumberTests {
 
-//mvt
+
 
 }
