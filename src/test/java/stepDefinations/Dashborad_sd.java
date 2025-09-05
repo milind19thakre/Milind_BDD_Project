@@ -1,5 +1,6 @@
 package stepDefinations;
 
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -28,8 +29,6 @@ public class Dashborad_sd {
     @Then("validate {} on dashboard")
     public void validateOnDashboard(String elementName) {
 
-        dp = new DashboardPage(driver);
-
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         // Build dynamic xpath using text
         String xpath = "//*[text()='" + elementName + "']";
@@ -37,4 +36,28 @@ public class Dashborad_sd {
         Assert.assertTrue("Element not displayed: " + elementName, element.isDisplayed());
     }
 
+    @Then("validate {} left pane")
+    public void validateElementsLeftPane(String elementName) {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+
+        String xpath = "//*[text()='"+ elementName + "']";
+        WebElement element_lp = driver.findElement(By.xpath(xpath));
+        Assert.assertTrue("Element not displayed" + elementName, element_lp.isDisplayed());
+    }
+
+    @Then("click on {} from left pane")
+    public void clickOnElementsFromLeftPane(String elementName) {
+
+        String xpath = "//*[text()='" + elementName + "']";
+        WebElement element = driver.findElement(By.xpath(xpath));
+        element.click();
+
+    }
+
+    @Then("check {} is present")
+    public void checkElementsIsPresent(String elementName) {
+        String xpath = "//*[text()='" + elementName + "']";
+        WebElement element_btn = driver.findElement(By.xpath(xpath));
+        Assert.assertTrue("Element not displayed" + elementName, element_btn.isDisplayed());
+    }
 }
